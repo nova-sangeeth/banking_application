@@ -1,3 +1,42 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
+
+
+class customer_details(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=256, null=True)
+    age = models.PositiveIntegerField()
+    phone = models.IntegerField(null=True)
+
+    street = models.CharField(max_length=256, null=True)
+    city = models.CharField(max_length=128, null=True)
+    state = models.CharField(max_length=128, null=True)
+    country = models.CharField(max_length=128, null=True)
+    pincode = models.IntegerField(null=True)
+    balance = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name="Balance")
+    account_number = models.CharField(
+        max_length=128, unique=True, editable=False)
+
+    def __str__(self):
+        return str(self.user)
+
+    def acc_no(self):
+        acc_no = "BANKACC"+str(self.pk)
+        return acc_no
+# code to show the balence in the customer's account in the correct format.
+
+    def get_balance(self, amount, code):
+        amount = Decimal(amount)
+        balance = Decimal(self.balance)
+        if code == 1:
+            if balance > amount:
+                balance = balance-amount
+                return balance
+            else:
+                return -1
+        else:
+            balance = balance + amount
+            return balance
