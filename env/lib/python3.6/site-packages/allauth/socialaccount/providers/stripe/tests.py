@@ -16,7 +16,7 @@ class StripeTests(OAuth2TestsMixin, TestCase):
           "object": "account",
           "business_logo": null,
           "business_name": null,
-          "business_url": "example.com",
+          "business_url": "test.com",
           "charges_enabled": true,
           "country": "SE",
           "currencies_supported": [
@@ -27,7 +27,7 @@ class StripeTests(OAuth2TestsMixin, TestCase):
           "default_currency": "eur",
           "details_submitted": true,
           "display_name": "Test",
-          "email": "test@example.com",
+          "email": "test@test.com",
           "managed": false,
           "metadata": {},
           "statement_descriptor": "TEST.COM",

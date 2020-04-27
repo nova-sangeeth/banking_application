@@ -1,21 +1,11 @@
-from allauth.socialaccount import app_settings
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
+from allauth.socialaccount import app_settings
 
 
 class SpotifyAccount(ProviderAccount):
-    def get_profile_url(self):
-        return self.account.extra_data.get('external_urls').get('spotify')
-
-    def get_avatar_url(self):
-        try:
-            return self.account.extra_data.get('images')[0].get('url')
-        except IndexError:
-            return None
-
-    def to_str(self):
-        dflt = super(SpotifyAccount, self).to_str()
-        return self.account.extra_data.get('display_name', dflt)
+    pass
 
 
 class SpotifyOAuth2Provider(OAuth2Provider):
@@ -36,5 +26,4 @@ class SpotifyOAuth2Provider(OAuth2Provider):
             scope.append('user-read-email')
         return scope
 
-
-provider_classes = [SpotifyOAuth2Provider]
+providers.registry.register(SpotifyOAuth2Provider)

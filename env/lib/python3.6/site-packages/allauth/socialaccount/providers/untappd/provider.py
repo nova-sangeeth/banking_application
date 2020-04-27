@@ -1,6 +1,7 @@
-from django.urls import reverse
+from django.core.urlresolvers import reverse
 
 from allauth.account.models import EmailAddress
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -49,4 +50,4 @@ class UntappdProvider(OAuth2Provider):
         return ret
 
 
-provider_classes = [UntappdProvider]
+providers.registry.register(UntappdProvider)

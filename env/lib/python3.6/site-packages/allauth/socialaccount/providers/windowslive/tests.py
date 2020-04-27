@@ -17,9 +17,9 @@ class WindowsLiveTests(OAuth2TestsMixin, TestCase):
           "gender": null,
           "emails": {
               "personal": null,
-              "account": "jsmith@example.com",
+              "account": "jsmith@xyz.net",
               "business": null,
-              "preferred": "jsmith@example.com"
+              "preferred": "jsmith@xyz.net"
               },
           "link": "https://profile.live.com/",
           "updated_time": "2014-02-07T00:35:27+0000",

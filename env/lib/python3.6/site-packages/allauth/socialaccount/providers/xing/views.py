@@ -1,11 +1,9 @@
 import json
 
 from allauth.socialaccount.providers.oauth.client import OAuth
-from allauth.socialaccount.providers.oauth.views import (
-    OAuthAdapter,
-    OAuthCallbackView,
-    OAuthLoginView,
-)
+from allauth.socialaccount.providers.oauth.views import (OAuthAdapter,
+                                                         OAuthLoginView,
+                                                         OAuthCallbackView)
 
 from .provider import XingProvider
 
@@ -30,7 +28,6 @@ class XingOAuthAdapter(OAuthAdapter):
         extra_data = client.get_user_info()['users'][0]
         return self.get_provider().sociallogin_from_response(request,
                                                              extra_data)
-
 
 oauth_login = OAuthLoginView.adapter_view(XingOAuthAdapter)
 oauth_callback = OAuthCallbackView.adapter_view(XingOAuthAdapter)

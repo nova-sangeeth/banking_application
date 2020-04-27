@@ -1,13 +1,11 @@
 import json
-
 from django.utils.http import urlencode
 
 from allauth.socialaccount.providers.oauth.client import OAuth
 from allauth.socialaccount.providers.oauth.views import (
     OAuthAdapter,
-    OAuthCallbackView,
     OAuthLoginView,
-)
+    OAuthCallbackView)
 
 from .provider import FlickrProvider
 
@@ -43,7 +41,6 @@ class FlickrOAuthAdapter(OAuthAdapter):
         extra_data = client.get_user_info()
         return self.get_provider().sociallogin_from_response(request,
                                                              extra_data)
-
 
 oauth_login = OAuthLoginView.adapter_view(FlickrOAuthAdapter)
 oauth_callback = OAuthCallbackView.adapter_view(FlickrOAuthAdapter)

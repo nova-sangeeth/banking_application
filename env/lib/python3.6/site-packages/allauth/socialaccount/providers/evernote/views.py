@@ -1,13 +1,10 @@
 from __future__ import absolute_import
-
 from datetime import datetime
 
 from allauth.socialaccount import app_settings
-from allauth.socialaccount.providers.oauth.views import (
-    OAuthAdapter,
-    OAuthCallbackView,
-    OAuthLoginView,
-)
+from allauth.socialaccount.providers.oauth.views import (OAuthAdapter,
+                                                         OAuthCallbackView,
+                                                         OAuthLoginView)
 
 from .provider import EvernoteProvider
 

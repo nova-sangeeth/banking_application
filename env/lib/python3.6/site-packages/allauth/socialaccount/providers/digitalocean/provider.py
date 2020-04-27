@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -18,4 +19,4 @@ class DigitalOceanProvider(OAuth2Provider):
         return dict(email=data['account']['email'])
 
 
-provider_classes = [DigitalOceanProvider]
+providers.registry.register(DigitalOceanProvider)

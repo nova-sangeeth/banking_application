@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -38,4 +39,4 @@ class OdnoklassnikiProvider(OAuth2Provider):
                     first_name=data.get('first_name'))
 
 
-provider_classes = [OdnoklassnikiProvider]
+providers.registry.register(OdnoklassnikiProvider)

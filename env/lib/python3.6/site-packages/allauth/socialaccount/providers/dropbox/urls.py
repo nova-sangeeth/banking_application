@@ -1,6 +1,5 @@
 from allauth.socialaccount.providers.oauth.urls import default_urlpatterns
 
-from .provider import DropboxOAuth2Provider
+from .provider import DropboxProvider
 
-
-urlpatterns = default_urlpatterns(DropboxOAuth2Provider)
+urlpatterns = default_urlpatterns(DropboxProvider)

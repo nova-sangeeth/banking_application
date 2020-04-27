@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth.provider import OAuthProvider
 
@@ -23,4 +24,4 @@ class VimeoProvider(OAuthProvider):
                     username=data.get('username'))
 
 
-provider_classes = [VimeoProvider]
+providers.registry.register(VimeoProvider)

@@ -1,10 +1,11 @@
 import json
 
-from django.template.loader import render_to_string
 from django.utils.html import escapejs
 
+from allauth.compat import render_to_string
+from allauth.socialaccount import providers
+from allauth.socialaccount.providers.base import ProviderAccount, Provider
 from allauth.account.models import EmailAddress
-from allauth.socialaccount.providers.base import Provider, ProviderAccount
 
 
 class PersonaAccount(ProviderAccount):
@@ -41,4 +42,4 @@ class PersonaProvider(Provider):
         return ret
 
 
-provider_classes = [PersonaProvider]
+providers.registry.register(PersonaProvider)

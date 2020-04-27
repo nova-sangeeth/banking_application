@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth.provider import OAuthProvider
 
@@ -22,4 +23,4 @@ class EvernoteProvider(OAuthProvider):
         return data
 
 
-provider_classes = [EvernoteProvider]
+providers.registry.register(EvernoteProvider)

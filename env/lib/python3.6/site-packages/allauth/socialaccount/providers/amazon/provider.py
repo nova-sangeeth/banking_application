@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -30,5 +31,4 @@ class AmazonProvider(OAuth2Provider):
                     last_name=last_name,
                     first_name=first_name)
 
-
-provider_classes = [AmazonProvider]
+providers.registry.register(AmazonProvider)

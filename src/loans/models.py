@@ -1,15 +1,20 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 from django.contrib.auth.models import User
 
 
 class customer_loans_model(models.Model):
+    auto = 'auto'
+    personal = 'personal'
+    home = 'home'
+    student = 'student'
     loan_choices = (
-        (auto: "auto_loans"),
-        (personal: "personal_loans"),
-        (home: "home_loans"),
-        (student: "student_loans"),
+        (auto, "auto_loans"),
+        (personal, "personal_loans"),
+        (home, "home_loans"),
+        (student, "student_loans"),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     previous_balance = models.DecimalField(max_digits=20, decimal_places=2)

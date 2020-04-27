@@ -1,3 +1,4 @@
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -29,9 +30,8 @@ class BitbucketOAuth2Provider(OAuth2Provider):
         return data['username']
 
     def extract_common_fields(self, data):
-        return dict(email=data.get('email'),
-                    username=data.get('username'),
-                    name=data.get('display_name'))
+        return dict(name=data.get('display_name'),
+                    email=data.get('email'))
 
 
-provider_classes = [BitbucketOAuth2Provider]
+providers.registry.register(BitbucketOAuth2Provider)

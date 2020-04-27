@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from allauth.socialaccount import providers
 from allauth.socialaccount.providers.base import ProviderAccount
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
@@ -32,7 +33,7 @@ class WindowsLiveProvider(OAuth2Provider):
     def extract_common_fields(self, data):
         try:
             email = data.get('emails').get('preferred')
-        except AttributeError:
+        except:
             email = None
 
         return dict(email=email,
@@ -40,4 +41,4 @@ class WindowsLiveProvider(OAuth2Provider):
                     first_name=data.get('first_name'))
 
 
-provider_classes = [WindowsLiveProvider]
+providers.registry.register(WindowsLiveProvider)
