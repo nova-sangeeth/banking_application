@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +13,14 @@
     <title>Banking System</title>
     {% endblock %}
     <!-- Bootstrap core CSS -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/daterangepicker.css' %}" rel="stylesheet" />
   </head>
 
   <body id="page-top">
@@ -22,6 +30,11 @@
       id="mainNav"
     >
       <div class="container">
+        <a
+          class="navbar-brand js-scroll-trigger"
+          href="{% url 'customer:index' %}"
+          >Banking System</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -90,7 +103,14 @@
       </div>
     </section>
     <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{% static 'js/scrolling-nav.js' %}"></script>
     {% block script %} {% endblock %}
   </body>
 </html>
