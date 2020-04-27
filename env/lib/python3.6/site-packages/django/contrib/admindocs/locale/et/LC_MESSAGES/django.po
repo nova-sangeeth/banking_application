@@ -3,14 +3,16 @@
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Janno Liivak <jannolii@gmail.com>, 2013,2015
+# Martin Pajuste <martinpajuste@gmail.com>, 2016
 # Marti Raudsepp <marti@juffo.org>, 2014
+# Ragnar Rebase <rrebase@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-10 14:49+0200\n"
-"PO-Revision-Date: 2015-10-11 20:51+0000\n"
-"Last-Translator: Janno Liivak <jannolii@gmail.com>\n"
+"POT-Creation-Date: 2019-09-08 17:27+0200\n"
+"PO-Revision-Date: 2019-12-28 01:40+0000\n"
+"Last-Translator: Ragnar Rebase <rrebase@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/django/django/language/"
 "et/)\n"
 "MIME-Version: 1.0\n"
@@ -138,8 +140,8 @@ msgstr "Meetod"
 msgid "Arguments"
 msgstr "Parameetrid"
 
-msgid "Back to Model Documentation"
-msgstr "Tagasi Mudeli Dokumentatsiooni"
+msgid "Back to Model documentation"
+msgstr "Tagasi Mudeli dokumentatsiooni"
 
 msgid "Model documentation"
 msgstr "Mudeli dokumentatsioon"
@@ -155,12 +157,13 @@ msgid "Template: %(name)s"
 msgstr "Mall: %(name)s"
 
 #, python-format
-msgid "Template: \"%(name)s\""
-msgstr "Mall: \"%(name)s\""
+msgid "Template: <q>%(name)s</q>"
+msgstr "Mall: <q>%(name)s</q>"
 
+#. Translators: Search is not a verb here, it qualifies path (a search path)
 #, python-format
-msgid "Search path for template \"%(name)s\":"
-msgstr "Otsinguteekond mallile \"%(name)s\":"
+msgid "Search path for template <q>%(name)s</q>:"
+msgstr "Otsinguteekond mallile <q>%(name)s</q>:"
 
 msgid "(does not exist)"
 msgstr "(pole olemas)"
@@ -212,8 +215,8 @@ msgstr "Kontekst:"
 msgid "Templates:"
 msgstr "Mallid:"
 
-msgid "Back to Views Documentation"
-msgstr "Tagasi Vaadete dokumentatsiooni"
+msgid "Back to View documentation"
+msgstr "Tagasi Vaate dokumentatsiooni"
 
 msgid "View documentation"
 msgstr "Vaata dokumentatsiooni"
@@ -240,13 +243,6 @@ msgstr ""
 "\n"
 "Vaate funktsioon: <code>%(full_name)s</code>. Nimi: <code>%(url_name)s</"
 "code>.\n"
-
-msgid "Boolean (Either True or False)"
-msgstr "Tõeväärtus (Kas tõene või väär)"
-
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr "Lahter tüüpi: %(field_type)s"
 
 msgid "tag:"
 msgstr "lipik:"
