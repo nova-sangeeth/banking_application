@@ -45,8 +45,9 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'crispy_forms',
+    'bootstrapform',
+    # 'allauth_bootstrap',
     'allauth',
-    'allauth_bootstrap',
     'allauth.account',
     'allauth.socialaccount',
 
@@ -70,8 +71,8 @@ ROOT_URLCONF = 'bank_application.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
