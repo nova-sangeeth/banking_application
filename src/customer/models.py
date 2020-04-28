@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class customer_details(models.Model):
+class customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=256, null=True)
     age = models.PositiveIntegerField()

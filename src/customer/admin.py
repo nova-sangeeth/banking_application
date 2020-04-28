@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import customer_details
+from .models import customer
 # Register your models here.
-admin.site.register(customer_details)
+admin.site.register(customer)
