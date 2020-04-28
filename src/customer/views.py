@@ -22,7 +22,7 @@ def register(request):
             f.save()
             group = get_object_or_404(Group, name='Customer')
             user.group.add(group)
-    return render(request, "index.html", {"form": form})
+    return render(request, "registeration.html", {"form": form})
 
 
 def edit(request):
