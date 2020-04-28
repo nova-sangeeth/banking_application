@@ -50,10 +50,29 @@ def withdraw(request):
 
 
 def amount(request):
-    pass
+    user = customer.objects.get(user=request.user)
+    transaction = Transaction(previous_balance=Decimal(user.balance))
+    withdraw = request.POST.get('withdraw')
+    transaction.amount = Decimal(withdraw)
+    amt = user.get_balance(withdraw, 1)
+    if amt == -1:
+        messages.error(request, "No Balance!")
+    else:
+        user.balance = amt
+    transaction.current_balance = Decimal(user.balance)
+    transaction.user = request.user
+    transaction.save()
+    user.save()
+
+
+def deposit(request):
+    user = customer.objects.get(user=request.user)
+    return render(request, 'deposit.html', {"balance": user.balance})
 
 
 def amount_to(request):
+    user = customer.objects.get(user=request.user)
+
     pass
 
 
