@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponse, get_list_or_404, get_object_or_404
-
-# Create your views here.
+from decimal import Decimal
 from .forms import customer_details_form
 from .models import customer
 from django.contrib.auth.models import User, Group
@@ -46,7 +45,8 @@ def profile(request):
 
 
 def withdraw(request):
-    pass
+    user = customer.objects.filter(user=request.user)
+    return render(request, "withdraw.html", {"set": user})
 
 
 def amount(request):

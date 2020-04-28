@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import index, register, profile, edit
+from .views import index, register, profile, edit, withdraw
 
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^register$', register, name="register"),
     url(r'^profile$', profile, name="profile"),
     url(r'^edit$', edit, name="edit"),
+    url(r'^withdraw$', withdraw, name="withdraw"),
 ]
