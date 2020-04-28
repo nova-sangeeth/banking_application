@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_list_or_404, get_object_or_404
 
 # Create your views here.
 from .forms import customer_details_form
@@ -26,7 +26,18 @@ def register(request):
 
 
 def edit(request):
-    pass
+    user = get_object_or_404(User, username=request.user.username)
+    Customer = get_object_or_404(customer, user=user)
+    form = customer_details_form(request.POST or None, instance=customer)
+    # form = customer_details_form(request.POST or None)
+    if request.method == "POST":
+        print("success")
+        if form.is_valid():
+            f = form.save()
+            f.account_no = f.acc_no()
+            f.save()
+
+    return render(request, "edit.html", {"form": form})
 
 
 def profile(request):
