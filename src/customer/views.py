@@ -3,6 +3,7 @@ from decimal import Decimal
 from .forms import customer_details_form
 from .models import customer
 from django.contrib.auth.models import User, Group
+from transaction.models import Transaction_model
 
 
 def index(request):
@@ -12,15 +13,15 @@ def index(request):
 def register(request):
     user = User.objects.get(username=request.user.username)
     Customer = customer(user=user)
-    form = customer_details_form(request.POST or None, instance=customer)
+    form = customer_details_form(request.POST or None)
     # context = {"customerform": form, "type": "register"}
     if request .method == "POST":
         if form.is_valid():
             f = form.save()
             f.account_no = f.acc_no()
             f.save()
-            group = get_object_or_404(Group, name='Customer')
-            user.group.add(group)
+            # group = get_object_or_404(Group, name='Customer')
+            # user.group.add(group)
     return render(request, "registeration.html", {"form": form})
 
 
@@ -51,7 +52,7 @@ def withdraw(request):
 
 def amount(request):
     user = customer.objects.get(user=request.user)
-    transaction = Transaction(previous_balance=Decimal(user.balance))
+    transaction = Transaction_model(previous_balance=Decimal(user.balance))
     withdraw = request.POST.get('withdraw')
     transaction.amount = Decimal(withdraw)
     amt = user.get_balance(withdraw, 1)
@@ -72,6 +73,17 @@ def deposit(request):
 
 def amount_to(request):
     user = customer.objects.get(user=request.user)
+    transaction = Transaction_model(previous_balance=Decimal(user.balance))
+    amount = request.POST.get('deposit')
+    transaction.amount = Decimal(amount)
+    user.balance = user.get_balance(amount, 2)
+    transaction.current_balance = Decimal(user.balance)
+    transaction.user = request.user
+    transaction.save()
+    transaction.transaction_id = transaction.get_transaction_id()
+    transaction.type = 'Deposit'
+    trasaction.save()
+    user.save()
 
     pass
 
