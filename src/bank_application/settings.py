@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # ------------------------------------
     'customer',
     'loans',
     'employee',
     'transaction',
-
+    # ------------------------------------
     'django.contrib.sites',
     'crispy_forms',
     'bootstrapform',
@@ -50,11 +50,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-
+    # ------------------------------------
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = "/profile"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
