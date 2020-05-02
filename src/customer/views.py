@@ -42,7 +42,7 @@ def edit(request):
 
 def profile(request):
     user = customer.objects.filter(user=request.user)
-    return render(request, "profile.html", {"set": user})
+    return render(request, "profile.html", {"data": user})
 
 
 def withdraw(request):
