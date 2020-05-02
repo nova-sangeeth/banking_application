@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_list_or_404, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_list_or_404, get_object_or_404, redirect
 from decimal import Decimal
 from .forms import customer_details_form
 from .models import customer
@@ -28,14 +28,14 @@ def register(request):
 def edit(request):
     user = get_object_or_404(User, username=request.user.username)
     Customer = get_object_or_404(customer, user=user)
-    form = customer_details_form(request.POST or None, instance=customer)
-    # form = customer_details_form(request.POST or None)
+    form = customer_details_form(request.POST or None, instance=Customer)
     if request.method == "POST":
         print("success")
         if form.is_valid():
             f = form.save()
             f.account_no = f.acc_no()
             f.save()
+        return redirect('profile')
 
     return render(request, "edit.html", {"form": form})
 
