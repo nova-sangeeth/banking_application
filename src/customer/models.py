@@ -8,7 +8,7 @@ class customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=256, null=True)
     age = models.PositiveIntegerField()
-    phone = models.IntegerField(null=True)
+    phone = models.CharField(null=True, max_length=15)
 
     street = models.CharField(max_length=256, null=True)
     city = models.CharField(max_length=128, null=True)
@@ -18,7 +18,7 @@ class customer(models.Model):
     balance = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="Balance")
     account_number = models.CharField(
-        max_length=128, unique=True, editable=False)
+        max_length=128, editable=False)
 
     def __str__(self):
         return str(self.user)
