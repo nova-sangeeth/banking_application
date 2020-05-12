@@ -38,11 +38,11 @@
     {% block body %}
 
     {% if messages %}
-    <div>
-      <strong>Messages:</strong>
+    <div class='container'>
+      <display>Messages:</display>
       <ul>
         {% for message in messages %}
-        <li>{{message}}</li>
+        <p class="lead"> {{message}}</p>
         {% endfor %}
       </ul>
     </div>

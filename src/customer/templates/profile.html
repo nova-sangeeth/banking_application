@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile page</title>
   </head>
+
   <body>
     {% block content %}
     <div class="container">
       <h1>User profile page.</h1>
 
-      <p>Name:<b>{{ user.username }}</b> <br /></p>
-      <p>email:<b>{{ user.email }}</b> <br /></p>
-      <p>account_number:<b>{{ user.account_number }}</b> <br /></p>
+      <p class="lead">Name:<b>{{ user.username }}</b> <br /></p>
+      <p class="lead">email:<b>{{ user.email }}</b> <br /></p>
+      <p class="lead">account_number:<b>{{ user.account_number }}</b> <br /></p>
     </div>
     <div class="container">
       {% for item in data %}
-      <p>age:<b>{{ item.age }}</b> <br /></p>
-      <p>phone:<b>{{ item.phone }}</b> <br /></p>
-      <p>street:<b>{{ item.street }}</b> <br /></p>
-      <p>state:<b>{{ item.state }}</b> <br /></p>
-      <p>country:<b>{{ item.country }}</b> <br /></p>
-      <p>pincode:<b>{{ item.pincode }}</b> <br /></p>
-      <p>balance:<b>{{ item.balance }}</b> <br /></p>
+      <p class="lead">age:<b>{{ item.age }}</b> <br /></p>
+      <p class="lead">phone:<b>{{ item.phone }}</b> <br /></p>
+      <p class="lead">street:<b>{{ item.street }}</b> <br /></p>
+      <p class="lead">city:<b>{{ item.city }}</b> <br /></p>
+      <p class="lead">state:<b>{{ item.state }}</b> <br /></p>
+      <p class="lead">country:<b>{{ item.country }}</b> <br /></p>
+      <p class="lead">pincode:<b>{{ item.pincode }}</b> <br /></p>
+      <p class="lead">balance:<b>{{ item.balance }}</b> <br /></p>
 
       {% endfor %}
       <a href="edit" class="btn btn-primary">Edit Profile</a>
     </div>
     {% endblock content %}
   </body>
+
 </html>
