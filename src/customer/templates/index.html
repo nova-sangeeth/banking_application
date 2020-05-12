@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 <html lang="en">
+
   <body>
     {% block content %}
     <div class="container">
-      <form method="POST">
-        {% csrf_token %} {{form.as_p}}
-        <button type="submit">Submit</button>
-      </form>
+
     </div>
     {% endblock content %}
   </body>
+
 </html>

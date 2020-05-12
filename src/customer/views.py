@@ -7,7 +7,8 @@ from transaction.models import Transaction_model
 
 
 def index(request):
-    return HttpResponse('Hello There')
+
+    return render(request, 'index.html')
 
 
 def register(request):
