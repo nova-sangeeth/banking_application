@@ -15,6 +15,7 @@ def register(request):
     user = User.objects.get(username=request.user.username)
     Customer = customer(user=user)
     form = customer_details_form(request.POST or None, instance=Customer)
+    # context = {"customerform": form, "type": "register"}
     if request .method == "POST":
         if form.is_valid():
             f = form.save()
@@ -22,6 +23,7 @@ def register(request):
             f.save()
             # group = get_object_or_404(Group, name='Customer')
             # user.group.add(group)
+            return redirect('profile')
     return render(request, "registeration.html", {"form": form})
 
 
