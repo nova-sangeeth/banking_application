@@ -15,10 +15,10 @@
 
       <p class="lead">Name:<b>{{ user.username }}</b> <br /></p>
       <p class="lead">email:<b>{{ user.email }}</b> <br /></p>
-      <p class="lead">account_number:<b>{{ user.account_number }}</b> <br /></p>
     </div>
     <div class="container">
       {% for item in data %}
+      <p class="lead">account_number:<b>{{ item.account_number }}</b> <br /></p>
       <p class="lead">age:<b>{{ item.age }}</b> <br /></p>
       <p class="lead">phone:<b>{{ item.phone }}</b> <br /></p>
       <p class="lead">street:<b>{{ item.street }}</b> <br /></p>
