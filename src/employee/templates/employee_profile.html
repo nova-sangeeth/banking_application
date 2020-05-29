@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% extends 'base.html' %}
+    {% load render_table from django_tables2 %}
 
     <head>
         <meta charset="UTF-8">
@@ -10,7 +11,42 @@
 
     <body>
         {% block content %}
-        <H3>Hello there!!, Employee</H3>
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">USer Id</th>
+                        <!-- <th scope="col">Password</th> -->
+
+                        <th scope="col">Username</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">last name</th>
+                        <th scope="col">email</th>
+                        <!-- <th scope="col">Staff Status</th>
+                            <th scope="col">Active</th> -->
+                        <th scope="col">Last Login</th>
+                        <th scope="col">Date Joined</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for user in user_name %}
+                        <th scope="row">{{ user.id }}</th>
+
+
+
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.last_login }}</td>
+                        <td>{{ user.date_joined }}</td>
+
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
         {% endblock content %}
     </body>
 

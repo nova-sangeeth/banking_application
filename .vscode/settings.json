@@ -1,4 +1,4 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "env/bin/python3"
+    "python.pythonPath": "/mnt/e/Developement/bank_application/env/bin/python3.7"
 }

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     # ------------------------------------
     'django.contrib.sites',
     'crispy_forms',
-    'bootstrapform',
+    'django_tables2',
+
     # 'allauth_bootstrap',
     'allauth',
     'allauth.account',
