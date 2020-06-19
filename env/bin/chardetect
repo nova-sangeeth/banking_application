@@ -1,4 +1,4 @@
-#!/mnt/e/Developement/bank_application/env/bin/python3.7
+#!/mnt/e/Developement/bank_application/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

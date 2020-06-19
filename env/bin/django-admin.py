@@ -1,4 +1,4 @@
-#!/mnt/e/Developement/bank_application/env/bin/python3.7
+#!/mnt/e/Developement/bank_application/env/bin/python
 from django.core import management
 
 if __name__ == "__main__":
