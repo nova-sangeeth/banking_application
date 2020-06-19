@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # ------------------------------------
     'customer',
-    'loans',
     'employee',
     'transaction',
     # ------------------------------------
@@ -95,11 +94,8 @@ WSGI_APPLICATION = 'bank_application.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bank_application',
-        'USER': 'admin',
-        'PASSWORD': '12345678',
-        "HOST": 'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
