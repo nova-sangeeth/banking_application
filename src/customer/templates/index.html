@@ -2,24 +2,26 @@
 {% extends 'base.html' %}
 <html lang="en">
 
-  <body>
-    {% block content %}
+<body>
+  {% block content %}
 
-    <div class="jumbotron jumbotron-fluid">
-      <span class="border-left">
-        <div class="container">
-          <h1 class="display-4">The Application Title??</h1>
-          <p class="lead">Trying to replicate a banking application.</p>
-          {% if user.is_authenticated %}
-          <a class="btn btn-primary" href="profile">Show Profile</a>
-          {% else %}
-          <a class="btn btn-primary" href="accounts/login">login</a>
-          {% endif %}
-        </div>
-      </span>
-    </div>
+  <div class="jumbotron jumbotron-fluid">
+    <span class="border-left">
+      <div class="container">
+        <h1 class="display-4">The Application Title??</h1>
+        <p class="lead">Trying to replicate a banking application.</p>
+        {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="profile">Show Profile</a>
+        <a class="btn btn-primary" href="deposit">Deposit</a>
+        <a class="btn btn-primary" href="withdraw">Withdraw</a>
+        {% else %}
+        <a class="btn btn-primary" href="accounts/login">login</a>
+        {% endif %}
+      </div>
+    </span>
+  </div>
 
-    {% endblock content %}
-  </body>
+  {% endblock content %}
+</body>
 
 </html>
